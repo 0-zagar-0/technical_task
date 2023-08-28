@@ -41,7 +41,7 @@ public class ReportServiceImpl implements ReportService {
             bestAsk = oBuyOperation(operationParse, bestAsk);
             bestAsk = checkBestAsk(operationParse, bestAsk);
 
-            findBestBidFromAllOperation(allOperation, bestBid, bestAsk);
+            findBidAndAskAndSetFromAllOperationgit (allOperation, bestBid, bestAsk);
 
             Optional<String> data = getData(allOperation, operationParse, bestBid, bestAsk);
             data.ifPresent(report::add);
@@ -59,7 +59,7 @@ public class ReportServiceImpl implements ReportService {
         return bestBid;
     }
 
-    private void findBestBidFromAllOperation(List<String> allOperations, String bestBid, String bestAsk) {
+    private void findBidAndAskAndSetFromAllOperation(List<String> allOperations, String bestBid, String bestAsk) {
         for (int i = 0; i < allOperations.size(); i++) {
             if (bestBid != null && allOperations.get(i).split(COMMA)[0].equals(bestBid.split(COMMA)[0])) {
                 allOperations.set(i, bestBid);
