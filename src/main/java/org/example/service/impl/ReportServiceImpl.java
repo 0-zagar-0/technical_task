@@ -41,7 +41,7 @@ public class ReportServiceImpl implements ReportService {
             bestAsk = oBuyOperation(operationParse, bestAsk);
             bestAsk = checkBestAsk(operationParse, bestAsk);
 
-            findBidAndAskAndSetFromAllOperationgit (allOperation, bestBid, bestAsk);
+            findBidAndAskAndSetFromAllOperation(allOperation, bestBid, bestAsk);
 
             Optional<String> data = getData(allOperation, operationParse, bestBid, bestAsk);
             data.ifPresent(report::add);
