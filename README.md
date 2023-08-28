@@ -8,14 +8,14 @@ In other words, each price level (for simplicity let's think of it as an integer
 Generally, the order book looks like the following example (B - bid, S - spread, A - ask), size defines how many shares can be bought/sold at this price:
 
 Price	Size	Type	Comment
-99	0	A	Size is zero, but it is still an ask price, because it is higher than the best ask
-98	50	A	Best ask (lowest non-empty ask price level)
-97	0	S
-96	0	S
-95	40	B	Best bid (highest non-empty bid price level)
-94	30	B
-93	0	B
-92	77	B
+99	     0	    A	    Size is zero, but it is still an ask price, because it is higher than the best ask
+98	    50	    A	    Best ask (lowest non-empty ask price level)
+97	    0	    S
+96	    0	    S
+95	    40	    B	    Best bid (highest non-empty bid price level)
+94	    30	    B
+93	    0	    B
+92	    77	    B
 
 The best bid is always lower than the best ask. (for this task it's not important why it is so, but otherwise, those limit orders would execute. We do not ask you to implement this behavior in your solution).
 
@@ -59,6 +59,7 @@ Price - 1...109
 Size - 0...108
 
 Example of input file:
+
 u,9,1,bid
 u,11,5,ask
 q,best_bid
@@ -68,6 +69,7 @@ o,sell,1
 q,size,10
 u,9,0,bid
 u,11,0,ask
+
 Output file
 Example of output file (for this input file):
 
